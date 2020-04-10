@@ -3,13 +3,14 @@ import axios from 'axios';
 
 class Home extends React.Component {
 
-    constructor() {
+    constructor(props) {
+        super(props);
         this.getAllWalks = this.getAllWalks.bind(this);
         this.getAllAnimals = this.getAllAnimals.bind(this);
         this.getAllShelters = this.getAllShelters.bind(this);
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.getAllWalks();
         this.getAllAnimals();
         this.getAllShelters();

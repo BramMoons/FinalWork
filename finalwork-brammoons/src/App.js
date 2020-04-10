@@ -13,8 +13,8 @@ import Agenda from './AgendaTest';
 
 class App extends Component {
 
-  componentWillMount() {
-    console.log(process.env.REST_API_URL);
+  componentDidMount() {
+    console.log(process.env.REACT_APP_API_URL);
   }
 
   render() {
