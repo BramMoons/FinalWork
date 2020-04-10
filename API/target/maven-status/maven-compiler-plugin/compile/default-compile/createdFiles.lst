@@ -1,0 +1,15 @@
+be\brammoons\WEBSERVICE\asielController.class
+be\brammoons\DAO\Database.class
+be\brammoons\DAO\dierDAO.class
+be\brammoons\WEBSERVICE\webconfig.class
+be\brammoons\DAO\asielDAO.class
+be\brammoons\DAO\wandelingenDAO.class
+be\brammoons\WEBSERVICE\wandelingenController.class
+be\brammoons\WEBSERVICE\webservice.class
+be\brammoons\MODEL\wandelingen.class
+be\brammoons\DAO\rasDAO.class
+be\brammoons\MODEL\asiel.class
+be\brammoons\WEBSERVICE\dierController.class
+be\brammoons\MODEL\dier.class
+be\brammoons\MODEL\ras.class
+be\brammoons\WEBSERVICE\rasController.class
