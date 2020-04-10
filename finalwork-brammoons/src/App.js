@@ -12,6 +12,11 @@ import Calendar from './Calendar';
 import Agenda from './AgendaTest';
 
 class App extends Component {
+
+  componentWillMount() {
+    console.log(process.env.REST_API_URL);
+  }
+
   render() {
     return(
       <HashRouter>
