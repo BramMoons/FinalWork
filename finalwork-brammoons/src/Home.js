@@ -17,15 +17,15 @@ class Home extends React.Component {
     }
 
     getAllWalks() {
-        axios.get("https://172.0.0.1/Wandeling/GetAll");
+        axios.get(process.env.REACT_APP_API_URL+"/Wandeling/GetAll");
     }
     
     getAllAnimals() {
-        axios.get("https://172.0.0.1/Dier/GetAll");
+        axios.get(process.env.REACT_APP_API_URL+"/Dier/GetAll");
     }
 
     getAllShelters() {
-        axios.get("https://172.0.0.1/Asiel/GetAll");
+        axios.get(process.env.REACT_APP_API_URL+"/Asiel/GetAll");
     }
 
     render() {
