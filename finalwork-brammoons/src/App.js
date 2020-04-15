@@ -1,4 +1,3 @@
-//This creates the feel that you are using different pages, while you are actually using just 1 html file
 import React, { Component } from "react";
 import {
   Route,
@@ -10,6 +9,7 @@ import Home from "./Home";
 import Landing from "./Landing";
 import Calendar from './Calendar';
 import Agenda from './AgendaTest';
+import Planning from './Planning';
 
 class App extends Component {
 
@@ -21,18 +21,19 @@ class App extends Component {
     return(
       <HashRouter>
         <div>
-          <h1>Final Work Bram Moons. Work In progress.</h1>
+          <h1>Final Work Bram Moons.</h1>
           <ul>
             <li><NavLink exact to="/">Home</NavLink></li>
-            <li><NavLink to="/Landing">Landing</NavLink></li>
             <li><NavLink to="/Calendar">Calendar</NavLink></li>
             <li><NavLink to="/Agenda">Agenda</NavLink></li>
+            <li><NavLink to="/Planning">Planning</NavLink></li>
           </ul>
           <div className="content">
             <Route exact path="/" component={Home} />
             <Route path="/Landing" component={Landing} />
             <Route path="/Calendar" component={Calendar} />
             <Route path="/Agenda" component={Agenda} />
+            <Route path="/Planning" component={Planning} />
           </div>
         </div>
       </HashRouter>
