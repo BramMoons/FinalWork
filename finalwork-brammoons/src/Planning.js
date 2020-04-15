@@ -40,6 +40,8 @@ class Planning extends React.Component {
             case "Gemeente":
                 wandeling.Gemeente = event.target.value;
                 break;
+            case "Datum":
+                wandeling.Datum = event.target.value;
             default:
                 //can be ignored
         }
@@ -71,6 +73,8 @@ class Planning extends React.Component {
                     <label htmlFor="Gemeente">Gemeente</label>
                     <input type="text" id="Gemeente" placeholder="Gemeente" onChange={this.handleChange}/>
                     <br></br>
+                    <label htmlFor="Datum">Datum</label>
+                    <input type="date" id="Datum" placeholder="Datum" onChange={this.handleChange} />
                     <input type="submit" value="Verzenden" />
                 </form>
             </div>
