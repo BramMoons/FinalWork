@@ -52,7 +52,7 @@ public class wandelingenDAO {
         int aantalAangepasteRijen = 0;
         
         try {
-            aantalAangepasteRijen = Database.voerSqlUitEnHaalAantalAangepasteRijenOp("INSERT INTO wandelingen (lengte, straat, straatNr, postcode, gemeente) VALUES (?,?,?,?,?)", new Object[] { nieuweWandeling.getLengte(), nieuweWandeling.getStraat(), nieuweWandeling.getStraatNr(), nieuweWandeling.getPostcode(), nieuweWandeling.getGemeente() });
+            aantalAangepasteRijen = Database.voerSqlUitEnHaalAantalAangepasteRijenOp("INSERT INTO wandelingen (lengte, straat, straatNr, postcode, gemeente, datum) VALUES (?,?,?,?,?,?)", new Object[] { nieuweWandeling.getLengte(), nieuweWandeling.getStraat(), nieuweWandeling.getStraatNr(), nieuweWandeling.getPostcode(), nieuweWandeling.getGemeente(), nieuweWandeling.getDatum() });
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -64,7 +64,7 @@ public class wandelingenDAO {
         int aantalAangepasteRijen = 0;
         
         try {
-            aantalAangepasteRijen = Database.voerSqlUitEnHaalAantalAangepasteRijenOp("UPDATE wandelingen SET lengte = ?, straat = ?, straatNr = ?, postcode = ?, gemeente = ? WHERE wandelingId = ?", new Object[] { nieuweWandeling.getLengte(), nieuweWandeling.getStraat(), nieuweWandeling.getStraatNr(), nieuweWandeling.getPostcode(), nieuweWandeling.getGemeente() });
+            aantalAangepasteRijen = Database.voerSqlUitEnHaalAantalAangepasteRijenOp("UPDATE wandelingen SET lengte = ?, straat = ?, straatNr = ?, postcode = ?, gemeente = ?, datum = ? WHERE wandelingId = ?", new Object[] { nieuweWandeling.getLengte(), nieuweWandeling.getStraat(), nieuweWandeling.getStraatNr(), nieuweWandeling.getPostcode(), nieuweWandeling.getGemeente(), nieuweWandeling.getDatum() });
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -85,7 +85,7 @@ public class wandelingenDAO {
     }
     
     private static wandelingen converteerHuidigeRijNaarObject(ResultSet mijnResultset) throws SQLException {
-        return new wandelingen(mijnResultset.getInt("wandelingId"), mijnResultset.getString("lengte"), mijnResultset.getString("straat"), mijnResultset.getInt("straatNr"), mijnResultset.getInt("postcode"), mijnResultset.getString("gemeente"));
+        return new wandelingen(mijnResultset.getInt("wandelingId"), mijnResultset.getString("lengte"), mijnResultset.getString("straat"), mijnResultset.getInt("straatNr"), mijnResultset.getInt("postcode"), mijnResultset.getString("gemeente"), mijnResultset.getString("datum"));
     }
     
 }

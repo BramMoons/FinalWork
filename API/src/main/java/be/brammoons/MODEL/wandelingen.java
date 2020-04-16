@@ -17,6 +17,7 @@ public class wandelingen {
     private int straatNr;
     private int postcode;
     private String gemeente;
+    private String datum;
 
     public int getWandelingId() {
         return wandelingId;
@@ -65,14 +66,23 @@ public class wandelingen {
     public void setGemeente(String gemeente) {
         this.gemeente = gemeente;
     }
+    
+    public String getDatum() {
+        return datum;
+    }
+    
+    public void setDatum(String datum) {
+        this.datum = datum;
+    }
 
-    public wandelingen(int wandelingId, String lengte, String straat, int straatNr, int postcode, String gemeente) {
+    public wandelingen(int wandelingId, String lengte, String straat, int straatNr, int postcode, String gemeente, String datum) {
         this.wandelingId = wandelingId;
         this.lengte = lengte;
         this.straat = straat;
         this.straatNr = straatNr;
         this.postcode = postcode;
         this.gemeente = gemeente;
+        this.datum = datum;
     }
 
     public wandelingen() {
