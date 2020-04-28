@@ -87,6 +87,7 @@ class Planning extends React.Component {
                     <br></br>
                     <label htmlFor="Datum">Datum</label>
                     <input type="date" id="Datum" placeholder="Datum" onChange={this.handleChange} />
+                    <br></br>
                     <input type="submit" value="Verzenden" />
                 </form>
             </div>
