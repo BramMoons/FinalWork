@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+import axios from 'axios';
 import { ReactAgenda , ReactAgendaCtrl, guid , getUnique , getLast , getFirst , Modal } from 'react-agenda';
 
 var now = new Date();
@@ -60,6 +61,10 @@ export default class Agenda extends Component {
 
     componentDidMount(){
         this.setState({items:items})
+        axios.get(process.env.REACT_APP_API_URL + "/wandelingen/GetAll")
+        .then((response) => {
+            this.setState({items: response.data.split(",")});
+        });
     }
 
     componentWillReceiveProps(next , last){
