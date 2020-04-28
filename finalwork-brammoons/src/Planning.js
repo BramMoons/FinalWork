@@ -28,6 +28,12 @@ class Planning extends React.Component {
             case "lengte":
                 wandeling.lengte = event.target.value;
                 break;
+            case "startUur":
+                wandeling.startUur = event.target.value;
+                break;
+            case "stopUur":
+                wandeling.stopUur = event.target.value;
+                break;
             case "Straat":
                 wandeling.Straat = event.target.value;
                 break;
@@ -63,6 +69,12 @@ class Planning extends React.Component {
                     <br></br>
                     <label htmlFor="Straat">Straat naam</label>
                     <input type="text" id="Straat" placeholder="Straat" onChange={this.handleChange}/>
+                    <br></br>
+                    <label htmlFor="startUur">Start uur van de wandeling</label>
+                    <input type="number" id="startUur" placeholder="startuur" onChange={this.handleChange}/>
+                    <br></br>
+                    <label htmlFor="stopUur">Einde van de wandelingen</label>
+                    <input type="number" id="stopUur" placeholder="stopUur" onChange={this.handleChange}/>
                     <br></br>
                     <label htmlFor="StraatNr">Straat nummer</label>
                     <input type="number" id="StraatNr" placeholder="StraatNr" onChange={this.handleChange}/>
