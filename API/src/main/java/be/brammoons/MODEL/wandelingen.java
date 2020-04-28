@@ -13,6 +13,8 @@ public class wandelingen {
     
     private int wandelingId;
     private String lengte;
+    private int startUur;
+    private int stopUur;
     private String straat;
     private int straatNr;
     private int postcode;
@@ -33,6 +35,22 @@ public class wandelingen {
 
     public void setLengte(String lengte) {
         this.lengte = lengte;
+    }
+    
+    public int getStartUur() {
+        return startUur;
+    }
+    
+    public void setStartUur() {
+        this.startUur = startUur;
+    }
+    
+    public int getStopUur() {
+        return stopUur;
+    }
+    
+    public void setStopUur() {
+        this.stopUur= stopUur;
     }
 
     public String getStraat() {
@@ -75,7 +93,7 @@ public class wandelingen {
         this.datum = datum;
     }
 
-    public wandelingen(int wandelingId, String lengte, String straat, int straatNr, int postcode, String gemeente, String datum) {
+    public wandelingen(int wandelingId, String lengte, int startUur, int stopUur, String straat, int straatNr, int postcode, String gemeente, String datum) {
         this.wandelingId = wandelingId;
         this.lengte = lengte;
         this.straat = straat;
