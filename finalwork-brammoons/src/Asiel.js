@@ -59,11 +59,28 @@ class Asiel extends React.Component {
         this.setState({ asiel: data });
     }
 
+    rowGetter = i => {
+        return this.state.asiel[i];
+    }
+
     render() {
         return (
             <div>
                 <ReactDataGrid
-
+                    rowKey = "id"
+                    columns = {this._columns}
+                    rowGetter = {this.rowGetter}
+                    rowsCount = {this.state.asiel.length}
+                    minHeight = {700}
+                    minWidth = {2000}
+                    rowSelection = {{
+                        enableShiftSelect: true,
+                        onRowSelected: this.onRowSelected,
+                        onRowDeselected: this.onRowDeselected,
+                        selectBy: {
+                            indexes: this.state.selectedIndexes
+                        }
+                    }}
                 />
             </div>
         );
