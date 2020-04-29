@@ -54,7 +54,7 @@ public class asielDAO {
         int aantalAangepasteRijen = 0;
         
         try {
-            aantalAangepasteRijen = Database.voerSqlUitEnHaalAantalAangepasteRijenOp("INSERT INTO asiel ( naam, dieren, straat, straatNr, postcode, gemeente ) VALUES ( ?, ?, ?, ?, ?, ? )", new Object[] { nieuwAsiel.getNaam(), nieuwAsiel.getDieren(), nieuwAsiel.getStraat(), nieuwAsiel.getStraatNr(), nieuwAsiel.getPostcode(), nieuwAsiel.getGemeente() });
+            aantalAangepasteRijen = Database.voerSqlUitEnHaalAantalAangepasteRijenOp("INSERT INTO asiel ( naam, dieren, straat, straatNr, postcode, gemeente, photoPath ) VALUES ( ?, ?, ?, ?, ?, ?, ? )", new Object[] { nieuwAsiel.getNaam(), nieuwAsiel.getDieren(), nieuwAsiel.getStraat(), nieuwAsiel.getStraatNr(), nieuwAsiel.getPostcode(), nieuwAsiel.getGemeente(), nieuwAsiel.getPhotoPath() });
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -66,7 +66,7 @@ public class asielDAO {
         int aantalAangepasteRijen = 0;
         
         try {
-            aantalAangepasteRijen = Database.voerSqlUitEnHaalAantalAangepasteRijenOp("UPDATE asiel SET naam = ?, dieren = ?, straat = ?, straatNr = ?, postode = ?, gemeente = ? WHERE asielId = ?", new Object[] { nieuwAsiel.getNaam(), nieuwAsiel.getDieren(), nieuwAsiel.getStraat(), nieuwAsiel.getStraatNr(), nieuwAsiel.getPostcode(), nieuwAsiel.getGemeente(), nieuwAsiel.getAsielId() });
+            aantalAangepasteRijen = Database.voerSqlUitEnHaalAantalAangepasteRijenOp("UPDATE asiel SET naam = ?, dieren = ?, straat = ?, straatNr = ?, postode = ?, gemeente = ?, photoPath = ? WHERE asielId = ?", new Object[] { nieuwAsiel.getNaam(), nieuwAsiel.getDieren(), nieuwAsiel.getStraat(), nieuwAsiel.getStraatNr(), nieuwAsiel.getPostcode(), nieuwAsiel.getGemeente(), nieuwAsiel.getAsielId(), nieuwAsiel.getPhotoPath() });
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -87,7 +87,7 @@ public class asielDAO {
     }
     
     private static asiel converteerHuidigeRijNaarObject(ResultSet mijnResultset) throws SQLException {
-        return new asiel (mijnResultset.getInt("asielid"), mijnResultset.getString("naam"), mijnResultset.getString("dieren"), mijnResultset.getString("straat"), mijnResultset.getInt("straatNr"), mijnResultset.getInt("postcode"), mijnResultset.getString("gemeente"));
+        return new asiel (mijnResultset.getInt("asielid"), mijnResultset.getString("naam"), mijnResultset.getString("dieren"), mijnResultset.getString("straat"), mijnResultset.getInt("straatNr"), mijnResultset.getInt("postcode"), mijnResultset.getString("gemeente"), mijnResultset.getString("photoPath"));
     }
     
 }

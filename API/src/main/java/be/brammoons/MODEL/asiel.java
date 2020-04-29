@@ -18,6 +18,7 @@ public class asiel {
     private int straatNr;
     private int postcode;
     private String gemeente;
+    private String photoPath;
 
     public int getAsielId() {
         return asielId;
@@ -74,8 +75,16 @@ public class asiel {
     public void setGemeente(String gemeente) {
         this.gemeente = gemeente;
     }
+    
+    public String getPhotoPath() {
+        return photoPath;
+    }
+    
+    public void setPhotoPath(String photoPath) {
+        this.photoPath = photoPath;
+    }
 
-    public asiel(int asielId, String naam, String dieren, String straat, int straatNr, int postcode, String gemeente) {
+    public asiel(int asielId, String naam, String dieren, String straat, int straatNr, int postcode, String gemeente, String photoPath) {
         this.asielId = asielId;
         this.naam = naam;
         this.dieren = dieren;
@@ -83,6 +92,7 @@ public class asiel {
         this.straatNr = straatNr;
         this.postcode = postcode;
         this.gemeente = gemeente;
+        this.photoPath = photoPath;
     }
 
     public asiel() {
