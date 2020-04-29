@@ -9,6 +9,7 @@ import Home from "./Home";
 import Landing from "./Landing";
 import Agenda from './AgendaTest';
 import Planning from './Planning';
+import Asiel from './Asiel';
 
 class App extends Component {
 
@@ -25,12 +26,14 @@ class App extends Component {
             <li><NavLink exact to="/">Home</NavLink></li>
             <li><NavLink to="/Agenda">Agenda</NavLink></li>
             <li><NavLink to="/Planning">Planning</NavLink></li>
+            <li><navlink to="/Asiel">Asiel</navlink></li>
           </ul>
           <div className="content">
             <Route exact path="/" component={Home} />
             <Route path="/Landing" component={Landing} />
             <Route path="/Agenda" component={Agenda} />
             <Route path="/Planning" component={Planning} />
+            <Route path="/Asiel" component={Asiel} />
           </div>
         </div>
       </HashRouter>
