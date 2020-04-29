@@ -26,7 +26,7 @@ class App extends Component {
             <li><NavLink exact to="/">Home</NavLink></li>
             <li><NavLink to="/Agenda">Agenda</NavLink></li>
             <li><NavLink to="/Planning">Planning</NavLink></li>
-            <li><navlink to="/Asiel">Asiel</navlink></li>
+            <li><NavLink to="/Asiel">Asiel</NavLink></li>
           </ul>
           <div className="content">
             <Route exact path="/" component={Home} />
