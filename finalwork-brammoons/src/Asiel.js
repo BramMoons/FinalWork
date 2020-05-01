@@ -1,47 +1,53 @@
 import React from 'react';
-import axios from 'axios';
 import ReactDataGrid from 'react-data-grid';
 
 class Asiel extends React.Component {
 
     constructor(props) {
         super(props);
+        let _columns;
+        let asielen = [];
 
         let defaultColumnProperties = {
-            sotable: true,
+            sortable: true,
         }
-
+        
         this._columns = [
             {
-                key: "id",
+                key: "asielId",
                 name: "ID",
-            },{
+            },
+            {
                 key: "naam",
                 name: "Naam",
-            },{
+            },
+            {
                 key: "dieren",
                 name: "Dieren",
-            },{
+            },
+            {
                 key: "straat",
                 name: "Straat",
-            },{
+            },
+            {
                 key: "straatNr",
                 name: "Straat nummer",
-            },{
+            },
+            {
                 key: "postcode",
                 name: "Postcode",
-            },{
+            },
+            {
                 key: "gemeente",
                 name: "Gemeente",
-            },{
-                key: "foto",
-                name: "Foto",
-            }
+            },
+            {
+                key: "photoPath",
+                name: "foto",
+            },
         ].map(c => ({ ...c, ...defaultColumnProperties }));
 
-        this.state = { asiel: [] };
-
-        this.getData = this.getData.bind(this);
+        this.state = { _columns, asielen }
     }
 
     componentDidMount() {
@@ -49,42 +55,47 @@ class Asiel extends React.Component {
     }
 
     getData() {
-        axios.get(process.env.REACT_APP_API_URL + "/Asiel/GetAll")
-            .then(this.parseResponse.bind(this));
-    }
-
-    parseResponse(response) {
         let data = [];
-        data = response.data;
-        this.setState({ asiel: data });
+        for (let i = 0; i < 10; i++) {
+            data[i].asielId = i;
+            data[i].naam = "asiel " + i;
+            data[i].dieren = "honden, katten";
+            data[i].straat = "schavolliestraat";
+            data[i].straatNr = i;
+            data[i].postcode = "1755";
+            data[i].gemeente = "Gooik";
+            data[i].photoPath = "/idfe.jpg";
+        }
+        this.setState({ asielen: data });
     }
 
     rowGetter = i => {
-        return this.state.asiel[i];
+        return this.state.asielen[i];
+    }
+
+    rowsCount() {
+        return this.state.asielen.length;
     }
 
     render() {
-        return (
+        return(
             <div>
                 <ReactDataGrid
-                    rowKey = "id"
+                    rowKey = "asielId"
                     columns = {this._columns}
                     rowGetter = {this.rowGetter}
-                    rowsCount = {this.state.asiel.length}
+                    rowsCount = {this.rowsCount}
                     minHeight = {700}
-                    minWidth = {2000}
+                    minColumnWidth = {2000}
                     rowSelection = {{
-                        enableShiftSelect: true,
-                        onRowSelected: this.onRowSelected,
-                        onRowDeselected: this.onRowDeselected,
-                        selectBy: {
-                            indexes: this.state.selectedIndexes
-                        }
+                        showButton: true,
+                        enableShiftSelect: true
                     }}
                 />
             </div>
         );
     }
+
 }
 
 export default Asiel;

@@ -5,32 +5,22 @@ class Home extends React.Component {
 
     constructor(props) {
         super(props);
-        this.getAllWalks = this.getAllWalks.bind(this);
-        this.getAllAnimals = this.getAllAnimals.bind(this);
-        this.getAllShelters = this.getAllShelters.bind(this);
     }
 
-    componentDidMount() {
-        this.getAllWalks();
-        this.getAllAnimals();
-        this.getAllShelters();
-    }
+    handleSubmit(foto) {
 
-    getAllWalks() {
-        axios.get(process.env.REACT_APP_API_URL+"/Wandeling/GetAll");
-    }
-    
-    getAllAnimals() {
-        axios.get(process.env.REACT_APP_API_URL+"/Dier/GetAll");
-    }
-
-    getAllShelters() {
-        axios.get(process.env.REACT_APP_API_URL+"/Asiel/GetAll");
     }
 
     render() {
         return (
-            <p>Home. Welcome Home</p>
+            <div>
+                <p>Home. Welcome Home</p>
+                <form onSubmit={this.handleSubmit}>
+                    <label>Selecteer je foto</label><br></br>
+                    <input type="file" id="gezichtFoto" name="gezichtFoto"></input>
+                </form>
+            </div>
+            
         );
     }
 }
