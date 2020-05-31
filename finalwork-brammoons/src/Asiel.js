@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDataGrid from 'react-data-grid';
+import axios from 'axios';
 
 class Asiel extends React.Component {
-
+    
     constructor(props) {
         super(props);
         let _columns;
-        let asielen = [];
 
         let defaultColumnProperties = {
-            sortable: true,
+            sortable: false,
         }
-        
+
         this._columns = [
             {
                 key: "asielId",
@@ -44,10 +44,11 @@ class Asiel extends React.Component {
             {
                 key: "photoPath",
                 name: "foto",
-            },
+            }
         ].map(c => ({ ...c, ...defaultColumnProperties }));
 
-        this.state = { _columns, asielen }
+        this.state = { _columns, asielen: [] }
+
     }
 
     componentDidMount() {
@@ -58,39 +59,31 @@ class Asiel extends React.Component {
         let data = [];
         for (let i = 0; i < 10; i++) {
             data[i].asielId = i;
-            data[i].naam = "asiel " + i;
+            data[i].naam = "asiel" + i;
             data[i].dieren = "honden, katten";
             data[i].straat = "schavolliestraat";
             data[i].straatNr = i;
             data[i].postcode = "1755";
-            data[i].gemeente = "Gooik";
-            data[i].photoPath = "/idfe.jpg";
+            data[i].gemeente = "gooik";
+            data[i].photoPath = "/idfe.jps"
         }
-        this.setState({ asielen: data });
+        this.setData({ asielen: data });
     }
 
     rowGetter = i => {
         return this.state.asielen[i];
     }
 
-    rowsCount() {
-        return this.state.asielen.length;
-    }
-
     render() {
         return(
             <div>
                 <ReactDataGrid
-                    rowKey = "asielId"
+                    rowkey = "asielId"
                     columns = {this._columns}
                     rowGetter = {this.rowGetter}
-                    rowsCount = {this.rowsCount}
+                    rowsCount = {this.state.asielen.length}
                     minHeight = {700}
-                    minColumnWidth = {2000}
-                    rowSelection = {{
-                        showButton: true,
-                        enableShiftSelect: true
-                    }}
+                    minWidth = {2000}
                 />
             </div>
         );
