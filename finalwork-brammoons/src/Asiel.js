@@ -48,6 +48,7 @@ class Asiel extends React.Component {
         ].map(c => ({ ...c, ...defaultColumnProperties }));
 
         this.state = { _columns, asielen: [] }
+        this.getData = this.getData.bind(this);
 
     }
 
