@@ -22,9 +22,6 @@ class Planning extends React.Component {
         let state = {};
 
         switch(event.target.id) {
-            case "Naam":
-                wandeling.naam = event.target.value;
-                break;
             case "lengte":
                 wandeling.lengte = event.target.value;
                 break;
@@ -62,7 +59,7 @@ class Planning extends React.Component {
                 <p>Dit is de Plannings pagina.</p>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="Naam">Naam van de wandeling</label>
-                    <input type="text" id="Naam" placeholder="Naam" onChange={this.handleChange}/>
+                    <input type="text" id="Naam" placeholder="Naam"/>
                     <br></br>
                     <label htmlFor="lengte">Lengte van de wandeling</label>
                     <input type="text" id="lengte" placeholder="lengte" onChange={this.handleChange}/>
