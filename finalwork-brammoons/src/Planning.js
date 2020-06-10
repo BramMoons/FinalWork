@@ -45,6 +45,7 @@ class Planning extends React.Component {
                 break;
             case "Datum":
                 wandeling.Datum = event.target.value;
+                break;
             default:
                 //can be ignored
         }

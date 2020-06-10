@@ -5,7 +5,8 @@ class AddWalk extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state(walk);
+        let walk;
+        this.state={walk};
     }
 
     handleSubmit() {

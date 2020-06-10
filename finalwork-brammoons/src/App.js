@@ -10,6 +10,7 @@ import Agenda from './AgendaTest';
 import Planning from './Planning';
 import Asiel from './Asiel';
 import AddAnimal from './AddAnimal';
+import AddWalk from './addWalk';
 
 class App extends Component {
 
@@ -28,6 +29,7 @@ class App extends Component {
             <li><NavLink to="/Planning">Planning</NavLink></li>
             <li><NavLink to="/Asiel">Asiel</NavLink></li>
             <li><NavLink to="/AddAnimal">Dier toevoegen</NavLink></li>
+            <li><NavLink to="/AddWalk">Wandeling toevoegen</NavLink></li>
           </ul>
           <div className="content">
             <Route exact path="/" component={Home} />
@@ -35,6 +37,7 @@ class App extends Component {
             <Route path="/Planning" component={Planning} />
             <Route path="/Asiel" component={Asiel} />
             <Route path="/AddAnimal" component={AddAnimal} />
+            <Route path="/AddWalk" component={AddWalk} />
           </div>
         </div>
       </HashRouter>
