@@ -22,15 +22,17 @@ class App extends Component {
     return(
       <HashRouter>
         <div>
+          <div id="nav">
           <h1>Final Work Bram Moons.</h1>
-          <ul>
-            <li><NavLink exact to="/">Home</NavLink></li>
-            <li><NavLink to="/Agenda">Agenda</NavLink></li>
-            <li><NavLink to="/Planning">Planning</NavLink></li>
-            <li><NavLink to="/Asiel">Asiel</NavLink></li>
-            <li><NavLink to="/AddAnimal">Dier toevoegen</NavLink></li>
-            <li><NavLink to="/AddWalk">Wandeling toevoegen</NavLink></li>
-          </ul>
+            <ul>
+              <li><NavLink exact to="/">Home</NavLink></li>
+              <li><NavLink to="/Agenda">Agenda</NavLink></li>
+              <li><NavLink to="/Planning">Planning</NavLink></li>
+              <li><NavLink to="/Asiel">Asiel</NavLink></li>
+              <li><NavLink to="/AddAnimal">Dier toevoegen</NavLink></li>
+              <li><NavLink to="/AddWalk">Wandeling toevoegen</NavLink></li>
+            </ul>
+          </div>
           <div className="content">
             <Route exact path="/" component={Home} />
             <Route path="/Agenda" component={Agenda} />

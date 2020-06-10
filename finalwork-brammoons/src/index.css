@@ -11,15 +11,23 @@
 
 @font-face {
   font-family: 'AdventPro';
-  src: url('/src/Font/advent-pro-v10-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */;
-  src: url('/src/Font/advent-pro-v10-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */;
+  src: url('advent-pro-v10-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */;
+  src: url('/Font/advent-pro-v10-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */;
 }
 
 body {
   background-image: url("Achtergrond.png");
   background-attachment: fixed;
   margin: 0;
-  font-family: AustieKitten, sans-serif;
+  font-family: AdventPro;
+}
+
+#nav{
+  text-align: left;
+}
+
+div {
+  text-align: center;
 }
 
 .App {
