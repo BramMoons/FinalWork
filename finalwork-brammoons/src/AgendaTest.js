@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import axios from 'axios';
-import { ReactAgenda , ReactAgendaCtrl, guid , getUnique , getLast , getFirst , Modal } from 'react-agenda';
+import { ReactAgenda , ReactAgendaCtrl, guid , Modal } from 'react-agenda';
 
 var now = new Date();
 

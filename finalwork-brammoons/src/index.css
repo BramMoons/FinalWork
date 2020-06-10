@@ -2,23 +2,24 @@
 @import '~react-datetime/css/react-datetime.css';
 
 @font-face {
-  font-family: AdventPro;
-  src: url(../public/Font/adventpro-regular.ttf)
+  font-family: AustieKitten;
+  src: url('/src/Font/AustieBostKittenKlub.eot');
+  src: url('/src/Font/AustieBostKittenKlub.eot?#iefix') format('embedded-opentype'),
+      url('/src/Font/AustieBostKittenKlub.woff2') format('woff2'),
+      url('/src/Font/AustieBostKittenKlub.woff') format('woff');
 }
 
 @font-face {
-  font-family: AustinKittie;
-  src: url(../public/Font/AustieBostKittenKlub.ttf)
+  font-family: 'AdventPro';
+  src: url('/src/Font/advent-pro-v10-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */;
+  src: url('/src/Font/advent-pro-v10-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */;
 }
 
 body {
+  background-image: url("Achtergrond.png");
+  background-attachment: fixed;
   margin: 0;
-  font-family: AdventPro;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: AustieKitten, sans-serif;
 }
 
 .App {
