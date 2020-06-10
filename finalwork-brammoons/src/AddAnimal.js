@@ -5,7 +5,8 @@ class AddAnimal extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state(dier);
+        let dier;
+        this.state={dier};
     }
 
     handleSubmit() {
