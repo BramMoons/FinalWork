@@ -1,13 +1,19 @@
 @import '~react-agenda/build/styles.css';
 @import '~react-datetime/css/react-datetime.css';
 
+@font-face {
+  font-family: AdventPro;
+  src: url(../public/Font/adventpro-regular.ttf)
+}
+
+@font-face {
+  font-family: AustinKittie;
+  src: url(../public/Font/AustieBostKittenKlub.ttf)
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: AdventPro;
 }
 
 code {
