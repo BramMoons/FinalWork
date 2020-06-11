@@ -50,11 +50,27 @@ public class dierDAO {
         return resultaat;
     }
     
+    public static dier getByKleur(String kleur) {
+        dier resultaat = null;
+        
+        try {
+            ResultSet mijnResultset = Database.voerSqlUitEnHaalResultaatOp("SELECT * from dier WHERE kleur = ?", new Object[] { kleur });
+            if (mijnResultset != null) {
+                mijnResultset.first();
+                resultaat = converteerHuidigeRijNaarObject(mijnResultset);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        return resultaat;
+    }
+    
     public static int voegDierToe(dier nieuwDier) {
         int aantalAangepasteRijen = 0;
         
             try {
-                aantalAangepasteRijen = Database.voerSqlUitEnHaalAantalAangepasteRijenOp("INSERT INTO dier (soort, grootte, karakter, geslacht, leeftijd, photoPath) VALUES (?,?,?,?,?,?,?)", new Object[] { nieuwDier.getSoort(), nieuwDier.getRasId(), nieuwDier.getGrootte(), nieuwDier.getKarakter(), nieuwDier.getGeslacht(), nieuwDier.getLeeftijd(), nieuwDier.getPhotoPath() });
+                aantalAangepasteRijen = Database.voerSqlUitEnHaalAantalAangepasteRijenOp("INSERT INTO dier (soort, grootte, kleur, karakter, geslacht, leeftijd, photoPath) VALUES (?,?,?,?,?,?,?,?)", new Object[] { nieuwDier.getSoort(), nieuwDier.getRasId(), nieuwDier.getGrootte(), nieuwDier.getKleur(), nieuwDier.getKarakter(), nieuwDier.getGeslacht(), nieuwDier.getLeeftijd(), nieuwDier.getPhotoPath() });
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
@@ -66,7 +82,7 @@ public class dierDAO {
         int aantalAangepasteRijen = 0;
         
         try {
-            aantalAangepasteRijen = Database.voerSqlUitEnHaalAantalAangepasteRijenOp("UPDATE dier SET soort = ?, rasId = ?, grootte = ?, karakter = ?, geslacht = ?, leeftijd = ? photoPath = ? WHERE dierId = ?", new Object[] { nieuwDier.getSoort(), nieuwDier.getRasId(), nieuwDier.getGrootte(), nieuwDier.getKarakter(), nieuwDier.getGeslacht(), nieuwDier.getLeeftijd(), nieuwDier.getPhotoPath() });
+            aantalAangepasteRijen = Database.voerSqlUitEnHaalAantalAangepasteRijenOp("UPDATE dier SET soort = ?, rasId = ?, grootte = ?, kleur = ?, karakter = ?, geslacht = ?, leeftijd = ? photoPath = ? WHERE dierId = ?", new Object[] { nieuwDier.getSoort(), nieuwDier.getRasId(), nieuwDier.getGrootte(), nieuwDier.getKleur(), nieuwDier.getKarakter(), nieuwDier.getGeslacht(), nieuwDier.getLeeftijd(), nieuwDier.getPhotoPath() });
         } catch (SQLException ex) {
             ex.printStackTrace();
         }

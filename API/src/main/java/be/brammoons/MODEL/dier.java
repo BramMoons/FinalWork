@@ -15,6 +15,7 @@ public class dier {
     private String soort;
     private int rasId;
     private int grootte;
+    private String kleur;
     private String karakter;
     private String geslacht;
     private int leeftijd;
@@ -50,6 +51,14 @@ public class dier {
 
     public void setGrootte(int grootte) {
         this.grootte = grootte;
+    }
+    
+    public String getKleur() {
+        return kleur;
+    }
+    
+    public void setKleur(String kleur) {
+        this.kleur = kleur;
     }
 
     public String getKarakter() {

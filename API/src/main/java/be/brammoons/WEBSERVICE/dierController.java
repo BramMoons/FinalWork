@@ -38,6 +38,12 @@ public class dierController {
         //aanroepen met '../Dier/getById?dierId=3'
     }
     
+    @RequestMapping("/getByKleur")
+    public dier getByKleur(@RequestParam(value = "kleur", defaultValue = "bruin") String kleur) {
+        return dierDAO.getByKleur(kleur);
+        //aanroepen met '../Dier/getByKleur?kleur=bruin
+    }
+    
     @RequestMapping(value = "/voegtoe", method = RequestMethod.POST)
     public int voegToe (@RequestBody dier nieuwDier) {
         return dierDAO.voegDierToe(nieuwDier);
