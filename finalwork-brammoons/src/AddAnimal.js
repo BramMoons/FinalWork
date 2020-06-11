@@ -13,7 +13,7 @@ class AddAnimal extends React.Component {
         dier.geslacht = "";
         dier.leeftijd = "1";
         dier.foto = "";
-        this.state = {dier};
+        this.state = {dier:{ras: "witte herder", grootte: 40, kleur: "wit", karakter: "sociaal", geslacht: "man", leeftijd: 1, foto: "WitteHerder.jpg"}};
     }
 
     handleSubmit() {
@@ -57,19 +57,19 @@ class AddAnimal extends React.Component {
                 <h1>Dier toevoegen</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label>Naam van het dier</label><br></br>
-                    <input type="text" id="name"></input><br></br>
+                    <input type="text" id="name" value="Jef"></input><br></br>
                     <label>Ras van het dier</label><br></br>
-                    <input type="text" id="ras" onChange={this.handleChange}></input><br></br>
+                    <input type="text" id="ras" onChange={this.handleChange} value={this.state.dier.ras}></input><br></br>
                     <label>Grootte van het dier</label><br></br>
-                    <input type="number" id="grootte" onChange={this.handleChange}></input><br></br> 
+                    <input type="number" id="grootte" onChange={this.handleChange} value={this.state.dier.grootte}></input><br></br> 
                     <label>Kleur van het dier</label><br></br>
-                    <input type="text" id="kleur" onChange={this.handleChange}></input><br></br>                    
+                    <input type="text" id="kleur" onChange={this.handleChange} value={this.state.dier.kleur}></input><br></br>                    
                     <label>Karakter van het dier</label><br></br>
-                    <input type="text" id="karakter" onChange={this.handleChange}></input><br></br>
+                    <input type="text" id="karakter" onChange={this.handleChange} value={this.state.dier.karakter}></input><br></br>
                     <label>Geslacht van het dier</label><br></br>
-                    <input type="text" id="geslacht" onChange={this.handleChange}></input><br></br>
+                    <input type="text" id="geslacht" onChange={this.handleChange} value={this.state.dier.geslacht}></input><br></br>
                     <label>Leeftijd van het dier</label><br></br>
-                    <input type="number" id="leeftijd" onChange={this.handleChange}></input><br></br>
+                    <input type="number" id="leeftijd" onChange={this.handleChange} value={this.state.dier.leeftijd}></input><br></br>
                     <label>Selecteer foto</label><br></br>
                     <input type="file" id="foto" name="foto" onChange={this.handleChange}></input><br></br>
                     <input type="submit"></input>

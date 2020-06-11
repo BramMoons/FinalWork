@@ -5,8 +5,7 @@ class Home extends React.Component {
 
     constructor(props) {
         super(props);
-        let mens;
-        this.state = {mens, dier:{ras: "vul formulier in", kleur: "vul formulier in"}}
+        this.state = {mens:{kleur: "bruin", karakter: "sociaal"}, dier:{ras: "vul formulier in", kleur: "vul formulier in"}}
     }
 
     handleChange(event) {

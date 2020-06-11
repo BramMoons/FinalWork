@@ -15,8 +15,8 @@ var items = [
     {
         _id           : guid(),
         name          : 'Meeting , dev staff!',
-        startDateTime : new Date("2020", "3", "28", 10),
-        endDateTime   : new Date("2020", "3", "28", 17, 0),
+        startDateTime : new Date("2020", "6", "20", 10),
+        endDateTime   : new Date("2020", "6", "20", 17, 0),
         classes       : 'color-1 color-4'
     },
     {

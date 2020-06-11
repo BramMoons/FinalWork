@@ -12,7 +12,8 @@ class AddWalk extends React.Component {
             "straat": "Schavollie",
             "straatnr": 44,
             "postcode": 1755,
-            "gemeente": "Gooik"
+            "gemeente": "Gooik",
+            "datum": 2020-6-20
         };
         let dier;
         this.state={walk, dier};
@@ -60,21 +61,21 @@ class AddWalk extends React.Component {
                 <h1>Wandeling toevoegen</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label>Lengte van de wandeling</label><br></br>
-                    <input type="text" id="lengte" onChange={this.handleChange}></input><br></br>
+                    <input type="text" id="lengte" onChange={this.handleChange} value={this.state.walk.lengte}></input><br></br>
                     <label>Startuur</label><br></br>
-                    <input type="number" id="startuur" onChange={this.handleChange}></input><br></br>
+                    <input type="number" id="startuur" onChange={this.handleChange} value={this.state.walk.startuur}></input><br></br>
                     <label>Stopuur</label><br></br>
-                    <input type="number" id="stopuur" onChange={this.handleChange}></input><br></br>                    
+                    <input type="number" id="stopuur" onChange={this.handleChange} value={this.state.walk.stopuur}></input><br></br>                    
                     <label>Straat</label><br></br>
-                    <input type="text" id="straat" onChange={this.handleChange}></input><br></br>
+                    <input type="text" id="straat" onChange={this.handleChange} value={this.state.walk.straat}></input><br></br>
                     <label>Straatnummer</label><br></br>
-                    <input type="number" id="straatnr" onChange={this.handleChange}></input><br></br>
+                    <input type="number" id="straatnr" onChange={this.handleChange} value={this.state.walk.straatnr}></input><br></br>
                     <label>Postcode</label><br></br>
-                    <input type="number" id="postcode" onChange={this.handleChange}></input><br></br>
+                    <input type="number" id="postcode" onChange={this.handleChange} value={this.state.walk.postcode}></input><br></br>
                     <label>Gemeente</label><br></br>
-                    <input type="text" id="gemeente" onChange={this.handleChange}></input><br></br>
+                    <input type="text" id="gemeente" onChange={this.handleChange} value={this.state.walk.gemeente}></input><br></br>
                     <label>Datum</label><br></br>
-                    <input type="date" id="datum" onChange={this.handleChange}></input><br></br>
+                    <input type="date" id="datum" onChange={this.handleChange} value={this.state.walk.datum}></input><br></br>
                     <input type="submit"></input>
                 </form>
             </div>
