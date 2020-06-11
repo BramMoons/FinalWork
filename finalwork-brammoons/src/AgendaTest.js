@@ -7,10 +7,7 @@ var now = new Date();
 
 var colors= {
     'color-1':"rgba(102, 195, 131 , 1)" ,
-    "color-2":"rgba(242, 177, 52, 1)" ,
-    "color-3":"rgba(235, 85, 59, 1)" ,
-    "color-4":"rgba(70, 159, 213, 1)",
-    "color-5":"rgba(170, 59, 123, 1)"
+    "color-2":"rgba(242, 177, 52, 1)" 
 }
 
 
@@ -62,9 +59,14 @@ export default class Agenda extends Component {
     componentDidMount(){
         this.setState({items:items})
         axios.get(process.env.REACT_APP_API_URL + "/wandelingen/GetAll")
-        .then((response) => {
-            this.setState({items: response.data.split(",")});
-        });
+        .then((this.parseResponse.bind(this)));
+    }
+
+    parseResponse(response) {
+        console.log("axios response: ",response);
+        let rows = [];
+        rows = response.data;
+        this.setState({items: rows});
     }
 
     componentWillReceiveProps(next , last){

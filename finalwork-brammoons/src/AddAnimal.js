@@ -23,7 +23,10 @@ class AddAnimal extends React.Component {
 				break;
 			case "grootte":
 				dier.grootte = event.target.value;
-				break;
+                break;
+            case "kleur":
+                dier.kleur = event.target.value;
+                break;
 			case "karakter":
 				dier.karakter = event.target.value;
 				break;
@@ -54,7 +57,9 @@ class AddAnimal extends React.Component {
                     <label>Ras van het dier</label><br></br>
                     <input type="text" id="ras" onChange={this.handleChange}></input><br></br>
                     <label>Grootte van het dier</label><br></br>
-                    <input type="number" id="grootte" onChange={this.handleChange}></input><br></br>                    
+                    <input type="number" id="grootte" onChange={this.handleChange}></input><br></br> 
+                    <label>Kleur van het dier</label><br></br>
+                    <input type="text" id="kleur" onChange={this.handleChange}></input><br></br>                    
                     <label>Karakter van het dier</label><br></br>
                     <input type="text" id="karakter" onChange={this.handleChange}></input><br></br>
                     <label>Geslacht van het dier</label><br></br>
