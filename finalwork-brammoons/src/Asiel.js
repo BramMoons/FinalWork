@@ -54,6 +54,15 @@ class Asiel extends React.Component {
 
     componentDidMount() {
         this.getData();
+        axios.GET(process.env.REACT_APP_API_URL +"/Dier/getByKleur"+this.state.mens.kleur)
+            .then(this.parseResponse.bind(this));
+    }
+
+    parseResponse(response) {
+        console.log("axios response: ",response);
+        let rows = [];
+        rows = response.data;
+        this.setState({asielen: rows});
     }
 
     getData() {
@@ -78,6 +87,7 @@ class Asiel extends React.Component {
     render() {
         return(
             <div>
+                <h1>Alle asielen</h1>
                 <ReactDataGrid
                     rowkey = "asielId"
                     columns = {this._columns}

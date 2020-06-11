@@ -13,7 +13,7 @@ public class dier {
     
     private int dierId;
     private String soort;
-    private int rasId;
+    private String ras;
     private int grootte;
     private String kleur;
     private String karakter;
@@ -37,12 +37,12 @@ public class dier {
         this.soort = soort;
     }
 
-    public int getRasId() {
-        return rasId;
+    public String getRas() {
+        return ras;
     }
 
-    public void setRasId(int rasId) {
-        this.rasId = rasId;
+    public void setRas(String ras) {
+        this.ras = ras;
     }
 
     public int getGrootte() {
@@ -93,10 +93,10 @@ public class dier {
         this.photoPath = photoPath;
     }
 
-    public dier(int dierId, String soort, int rasId, int grootte, String karakter, String geslacht, int leeftijd, String photoPath) {
+    public dier(int dierId, String soort, String ras, int grootte, String karakter, String geslacht, int leeftijd, String photoPath) {
         this.dierId = dierId;
         this.soort = soort;
-        this.rasId = rasId;
+        this.ras = ras;
         this.grootte = grootte;
         this.karakter = karakter;
         this.geslacht = geslacht;

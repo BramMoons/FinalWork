@@ -57,7 +57,7 @@ class Planning extends React.Component {
     render() {
         return(
             <div id="wandelingForm">
-                <p>Dit is de Plannings pagina.</p>
+                <h1>Plan je wandeling</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="Naam">Naam van de wandeling</label>
                     <input type="text" id="Naam" placeholder="Naam"/>

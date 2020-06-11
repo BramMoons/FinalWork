@@ -43,7 +43,7 @@ class Home extends React.Component {
     render() {
         return (
             <div>
-                <p>Home. Welcome Home</p>
+                <h1>Match your best friend</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label>Selecteer je foto</label><br></br>
                     <input type="file" id="gezichtFoto" name="gezichtFoto"></input><br></br>

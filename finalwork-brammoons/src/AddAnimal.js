@@ -50,7 +50,7 @@ class AddAnimal extends React.Component {
     render() {
         return (
             <div>
-                <p>Dier toevoegen</p>
+                <h1>Dier toevoegen</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label>Naam van het dier</label><br></br>
                     <input type="text" id="name"></input><br></br>

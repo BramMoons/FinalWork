@@ -10,7 +10,8 @@ class AddWalk extends React.Component {
     }
 
     handleSubmit() {
-        axios.put(process.env.REACT_APP_API_URL+"/Wandeling/voegToe/"+this.dier)
+        axios.put(process.env.REACT_APP_API_URL+"/Wandeling/voegToe/"+this.dier);
+        window.location.reload;
     }
 
     handleChange(event) {
@@ -50,7 +51,7 @@ class AddWalk extends React.Component {
     render() {
         return (
             <div>
-                <p>Wandeling toevoegen</p>
+                <h1>Wandeling toevoegen</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label>Lengte van de wandeling</label><br></br>
                     <input type="text" id="lengte" onChange={this.handleChange}></input><br></br>
