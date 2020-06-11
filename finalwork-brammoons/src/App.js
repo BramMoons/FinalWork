@@ -7,7 +7,6 @@ import {
 
 import Home from "./Home";
 import Agenda from './AgendaTest';
-import Planning from './Planning';
 import Asiel from './Asiel';
 import AddAnimal from './AddAnimal';
 import AddWalk from './addWalk';
@@ -27,7 +26,6 @@ class App extends Component {
             <ul>
               <li><NavLink exact to="/">Home</NavLink></li>
               <li><NavLink to="/Agenda">Agenda</NavLink></li>
-              <li><NavLink to="/Planning">Planning</NavLink></li>
               <li><NavLink to="/Asiel">Asiel</NavLink></li>
               <li><NavLink to="/AddAnimal">Dier toevoegen</NavLink></li>
               <li><NavLink to="/AddWalk">Wandeling toevoegen</NavLink></li>
@@ -36,7 +34,6 @@ class App extends Component {
           <div className="content">
             <Route exact path="/" component={Home} />
             <Route path="/Agenda" component={Agenda} />
-            <Route path="/Planning" component={Planning} />
             <Route path="/Asiel" component={Asiel} />
             <Route path="/AddAnimal" component={AddAnimal} />
             <Route path="/AddWalk" component={AddWalk} />
