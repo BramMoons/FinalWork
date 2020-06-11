@@ -14,14 +14,14 @@ var colors= {
 var items = [
     {
         _id           : guid(),
-        name          : 'Meeting , dev staff!',
+        name          : 'Wandeling Dilbeek, 15km',
         startDateTime : new Date("2020", "6", "20", 10),
         endDateTime   : new Date("2020", "6", "20", 17, 0),
         classes       : 'color-1 color-4'
     },
     {
         _id           : guid(),
-        name          : 'Working lunch , Holly',
+        name          : 'Wandelig van bruegel, 10km',
         startDateTime : new Date(now.getFullYear(), now.getMonth(), now.getDate()+1, 11, 0),
         endDateTime   : new Date(now.getFullYear(), now.getMonth(), now.getDate()+1, 13, 0),
         classes       : 'color-2'
