@@ -5,45 +5,51 @@ class AddWalk extends React.Component {
 
     constructor(props) {
         super(props);
-        let walk;
-        this.state={walk};
+        let walk= {
+            "lengte": 5,
+            "startuur": 10,
+            "stopuur": 16,
+            "straat": "Schavollie",
+            "straatnr": 44,
+            "postcode": 1755,
+            "gemeente": "Gooik"
+        };
+        let dier;
+        this.state={walk, dier};
     }
 
     handleSubmit() {
-        axios.put(process.env.REACT_APP_API_URL+"/Wandeling/voegToe/"+this.dier);
-        window.location.reload;
+        axios.put(process.env.REACT_APP_API_URL+"/Wandeling/voegToe/"+this.state.dier);
     }
 
     handleChange(event) {
-		console.log("state in handleChange: ",this.state);
-		let walk = this.state.walk;
-		let state = {};
+        let walk = this.state.walk;
+		let wandeling = this.state.walk;
 		switch(event.target.id){
 			case "lengte":
-				walk.lengte = event.target.value;
+				wandeling.lengte = event.target.value;
 				break;
 			case "startuur":
-				walk.startuur = event.target.value;
+				wandeling.startuur = event.target.value;
 				break;
 			case "stopuur":
-				walk.stopuur = event.target.value;
+				wandeling.stopuur = event.target.value;
 				break;
 			case "straat":
-				walk.straat = event.target.value;
+				wandeling.straat = event.target.value;
                 break;
             case "straatnr":
-                walk.straatnr = event.target.value;
+                wandeling.straatnr = event.target.value;
                 break;
             case "postcode":
-                walk.postcode = event.target.value;
+                wandeling.postcode = event.target.value;
                 break;
             case "gemeente":
-                walk.gemeente = event.target.value;
+                wandeling.gemeente = event.target.value;
                 break;
 			default:
 				// Can be ignored
 		}
-		state.walk = walk;
 		
 		this.setState(walk);
 	}

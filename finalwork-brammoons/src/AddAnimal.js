@@ -5,8 +5,15 @@ class AddAnimal extends React.Component {
 
     constructor(props) {
         super(props);
-        let dier;
-        this.state={dier};
+        let dier = {};
+        dier.ras = "";
+        dier.grootte = "20";
+        dier.kleur = "";
+        dier.karakter = "";
+        dier.geslacht = "";
+        dier.leeftijd = "1";
+        dier.foto = "";
+        this.state = {dier};
     }
 
     handleSubmit() {
@@ -14,9 +21,7 @@ class AddAnimal extends React.Component {
     }
 
     handleChange(event) {
-        console.log("state in handleChange: ",this.state);
 		let dier = this.state.dier;
-		let state = {};
 		switch(event.target.id){
 			case "ras":
 				dier.ras = event.target.value;
@@ -42,7 +47,6 @@ class AddAnimal extends React.Component {
 			default:
 				// Can be ignored
 		}
-		state.dier = dier;
 		
 		this.setState(dier);
     }

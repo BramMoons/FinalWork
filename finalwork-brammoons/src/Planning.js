@@ -17,25 +17,22 @@ class Planning extends React.Component {
     }
 
     handleChange(event) {
-        console.log("state in handleChange", this.state);
-        let wandeling = this.state.wandeling;
-        let state = {};
-
-        switch(event.target.id) {
-            case "lengte":
-                wandeling.lengte = event.target.value;
-                break;
-            case "startUur":
-                wandeling.startUur = event.target.value;
+		let wandeling = this.state.wandeling;
+		switch(event.target.id){
+			case "lengte":
+				wandeling.lengte = event.target.value;
+				break;
+			case "startUur":
+				wandeling.startuur = event.target.value;
                 break;
             case "stopUur":
-                wandeling.stopUur = event.target.value;
+                wandeling.stopuur = event.target.value;
                 break;
-            case "Straat":
-                wandeling.Straat = event.target.value;
-                break;
-            case "StraatNr":
-                wandeling.StraatNr = event.target.value;
+			case "Straat":
+				wandeling.Straat = event.target.value;
+				break;
+			case "StraatNr":
+				wandeling.StraatNr = event.target.value;
                 break;
             case "Postcode":
                 wandeling.Postcode = event.target.value;
@@ -46,12 +43,10 @@ class Planning extends React.Component {
             case "Datum":
                 wandeling.Datum = event.target.value;
                 break;
-            default:
-                //can be ignored
-        }
-        state.wandeling = wandeling;
-
-        this.setState(state);
+			default:
+				// Can be ignored
+		}
+		this.setState(wandeling);
     }
 
     render() {

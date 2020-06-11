@@ -21,6 +21,22 @@ body {
   margin: 0;
   font-family: AdventPro;
   color: #6aa300;
+  font-size: 20px;
+}
+
+#home{
+  margin: 0px auto;
+  display: table;
+}
+
+#form1 {
+  display: inline-block;
+  text-align: center;
+}
+
+#form2 {
+  display: inline-block;
+  text-align: center;
 }
 
 #nav{

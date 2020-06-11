@@ -6,13 +6,11 @@ class Home extends React.Component {
     constructor(props) {
         super(props);
         let mens;
-        let dier;
-        this.state = {mens, dier}
+        this.state = {mens, dier:{ras: "vul formulier in", kleur: "vul formulier in"}}
     }
 
     handleChange(event) {
 		let mens = this.state.mens;
-		let state = {};
 		switch(event.target.id){
 			case "kleur":
 				mens.kleur = event.target.value;
@@ -23,7 +21,6 @@ class Home extends React.Component {
 			default:
 				// Can be ignored
 		}
-		state.mens = mens;
 		
 		this.setState(mens);
 	}
@@ -42,24 +39,30 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div>
+            <div id="home">
                 <h1>Match your best friend</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Selecteer je foto</label><br></br>
-                    <input type="file" id="gezichtFoto" name="gezichtFoto"></input><br></br>
-                    <label>Geef je haarkleur</label><br></br>
-                    <input type="text" id="kleur" onChange={this.handleChange}></input><br></br>
-                    <label>Geef een karakter trek mee</label><br></br>
-                    <input type="text" id="karakter" onChange={this.handleChange}></input>
-                </form>
-                <form>
-                    <label>Gematcht dier</label><br></br>
-                    <label>Ras van het dier</label><br></br>
-                    <input type="text" value={this.state.dier.ras} /><br></br>
-                    <label>Geslacht van het dier</label><br></br>
-                    <input type="text" value={this.state.dier.geslacht} /><br></br>
-                    <image src={this.state.dier.photoPath}></image>
-                </form>
+                    <div id="form1">
+                    <form onSubmit={this.handleSubmit}>
+                        <label>Selecteer je foto</label><br></br>
+                        <input type="file" id="gezichtFoto" name="gezichtFoto"></input><br></br>
+                        <label>Geef je haarkleur</label><br></br>
+                        <input type="text" id="kleur" onChange={this.handleChange}></input><br></br>
+                        <label>Geef een karakter trek mee</label><br></br>
+                        <input type="text" id="karakter" onChange={this.handleChange}></input><br></br>
+                        <input type="submit"></input>
+                    </form>
+                </div>
+                <div id="form2">
+                    <form>
+                        <label>Gematcht dier</label><br></br>
+                        <label>Ras van het dier</label><br></br>
+                        <input type="text" value={this.state.dier.ras} /><br></br>
+                        <label>Geslacht van het dier</label><br></br>
+                        <input type="text" value={this.state.dier.kleur} /><br></br>
+                        <image src={this.state.dier.photoPath}></image>
+                    </form>
+                </div>
+               
             </div>
             
         );
