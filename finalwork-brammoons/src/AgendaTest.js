@@ -15,16 +15,16 @@ var items = [
     {
         _id           : guid(),
         name          : 'Wandeling Dilbeek, 15km',
-        startDateTime : new Date("2020", "6", "20", 10),
-        endDateTime   : new Date("2020", "6", "20", 17, 0),
-        classes       : 'color-1 color-4'
+        startDateTime : new Date("2020", "5", "20", 10),
+        endDateTime   : new Date("2020", "5", "20", 17),
+        classes       : 'color-1'
     },
     {
         _id           : guid(),
         name          : 'Wandelig van bruegel, 10km',
         startDateTime : new Date(now.getFullYear(), now.getMonth(), now.getDate()+1, 11, 0),
         endDateTime   : new Date(now.getFullYear(), now.getMonth(), now.getDate()+1, 13, 0),
-        classes       : 'color-2'
+        classes       : 'color-1'
     }
 ];
 

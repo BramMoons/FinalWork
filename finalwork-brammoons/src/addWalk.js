@@ -17,10 +17,13 @@ class AddWalk extends React.Component {
         };
         let dier;
         this.state={walk, dier};
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit() {
-        axios.put(process.env.REACT_APP_API_URL+"/Wandeling/voegToe/"+this.state.dier);
+        axios.put(process.env.REACT_APP_API_URL+"/Wandeling/voegToe/"+this.state.walk);
     }
 
     handleChange(event) {

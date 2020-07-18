@@ -13,7 +13,10 @@ class AddAnimal extends React.Component {
         dier.geslacht = "";
         dier.leeftijd = "1";
         dier.foto = "";
-        this.state = {dier:{ras: "witte herder", grootte: 40, kleur: "wit", karakter: "sociaal", geslacht: "man", leeftijd: 1, foto: "WitteHerder.jpg"}};
+        this.state = {dier:{naam: "Jef", ras: "witte herder", grootte: 40, kleur: "wit", karakter: "sociaal", geslacht: "man", leeftijd: 1, foto: "WitteHerder.jpg"}};
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit() {
@@ -23,6 +26,9 @@ class AddAnimal extends React.Component {
     handleChange(event) {
 		let dier = this.state.dier;
 		switch(event.target.id){
+            case "name":
+                dier.naam = event.target.value;
+                break;
 			case "ras":
 				dier.ras = event.target.value;
 				break;
@@ -57,7 +63,7 @@ class AddAnimal extends React.Component {
                 <h1>Dier toevoegen</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label>Naam van het dier</label><br></br>
-                    <input type="text" id="name" value="Jef"></input><br></br>
+                    <input type="text" id="name" onChange={this.handleChange} value={this.state.dier.naam}></input><br></br>
                     <label>Ras van het dier</label><br></br>
                     <input type="text" id="ras" onChange={this.handleChange} value={this.state.dier.ras}></input><br></br>
                     <label>Grootte van het dier</label><br></br>

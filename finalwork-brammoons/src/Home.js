@@ -5,7 +5,11 @@ class Home extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {mens:{kleur: "bruin", karakter: "sociaal"}, dier:{ras: "vul formulier in", kleur: "vul formulier in"}}
+        let mens;
+        this.state = {mens:{"kleur": "bruin", "karakter": "sociaal"}, dier:{ras: "vul formulier in", kleur: "vul formulier in"}}
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
