@@ -20,7 +20,7 @@ public class dierDAO {
         ArrayList<dier> resultaat = new ArrayList<dier>();
         
         try {
-            ResultSet mijnResultset = Database.voerSqlUitEnHaalResultaatOp("SELECT * dier");
+            ResultSet mijnResultset = Database.voerSqlUitEnHaalResultaatOp("SELECT * from dier");
             if (mijnResultset != null) {
                 while (mijnResultset.next()) {
                     dier huidigDier = converteerHuidigeRijNaarObject(mijnResultset);

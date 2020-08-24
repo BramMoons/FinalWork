@@ -15,8 +15,8 @@ var items = [
     {
         _id           : guid(),
         name          : 'Wandeling Dilbeek, 15km',
-        startDateTime : new Date("2020", "5", "20", 10),
-        endDateTime   : new Date("2020", "5", "20", 17),
+        startDateTime : new Date("2020", "9", "20", 10),
+        endDateTime   : new Date("2020", "9", "20", 17),
         classes       : 'color-1'
     },
     {
@@ -58,7 +58,7 @@ export default class Agenda extends Component {
 
     componentDidMount(){
         this.setState({items:items})
-        axios.get(process.env.REACT_APP_API_URL + "/wandelingen/GetAll")
+        axios.get("http://127.0.0.1:8080/Wandeling/GetAll")
         .then((this.parseResponse.bind(this)));
     }
 

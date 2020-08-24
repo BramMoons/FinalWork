@@ -29,7 +29,8 @@ class Home extends React.Component {
 	}
 
     handleSubmit() {
-        axios.GET(process.env.REACT_APP_API_URL +"/Dier/getByKleur"+this.state.mens.kleur)
+        console.log("haarkleur test ", this.state.mens.kleur);
+        axios.get("http://127.0.0.1:8080/Dier/getByKleur?kleur="+this.state.mens.kleur)
             .then(this.parseResponse.bind(this));
     }
 
@@ -37,7 +38,17 @@ class Home extends React.Component {
         console.log("axios response: ",response);
         let rows = [];
         rows = response.data;
+        rows.dierId = response.data.dierId;
+        rows.geslacht = response.data.geslacht;
+        rows.karakter = response.data.karakter;
+        rows.kleur = response.data.kleur;
+        rows.leeftijd = response.data.leeftijd;
+        rows.photoPath = response.data.photoPath;
+        rows.ras = response.data.ras;
+        rows.soort = response.data.soort;
         this.setState({dier: rows});
+        console.log("rows ", rows);
+        console.log("state dier ", this.state.dier);
     }
 
     render() {
@@ -52,7 +63,8 @@ class Home extends React.Component {
                         <input type="text" id="kleur" onChange={this.handleChange}></input><br></br>
                         <label>Geef een karakter trek mee</label><br></br>
                         <input type="text" id="karakter" onChange={this.handleChange}></input><br></br>
-                        <input type="submit"></input>
+                        <input type="submit" onClick={this.handleSubmit}></input>
+                        <button type="button" onClick={this.handleSubmit}>Verzenden2</button>
                     </form>
                 </div>
                 <div id="form2">
@@ -61,7 +73,15 @@ class Home extends React.Component {
                         <label>Ras van het dier</label><br></br>
                         <input type="text" value={this.state.dier.ras} /><br></br>
                         <label>Geslacht van het dier</label><br></br>
+                        <input type="text" value={this.state.dier.geslacht} /><br></br>
+                        <label>Kleur van het dier</label><br></br>
                         <input type="text" value={this.state.dier.kleur} /><br></br>
+                        <label>Grootte van het dier (in cm)</label><br></br>
+                        <input type="text" value={this.state.dier.grootte} /><br></br>
+                        <label>karakter van het dier</label><br></br>
+                        <input type="text" value={this.state.dier.karakter} /><br></br>
+                        <label>Leeftijd van het dier</label><br></br>
+                        <input type="text" value={this.state.dier.leeftijd} /><br></br>
                         <image src={this.state.dier.photoPath}></image>
                     </form>
                 </div>

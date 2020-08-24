@@ -20,7 +20,7 @@ class AddAnimal extends React.Component {
     }
 
     handleSubmit() {
-        axios.put(process.env.REACT_APP_API_URL+"/Dier/voegToe/"+this.dier)
+        axios.put("http://127.0.0.1:8080/Dier/voegToe/"+this.dier)
     }
 
     handleChange(event) {

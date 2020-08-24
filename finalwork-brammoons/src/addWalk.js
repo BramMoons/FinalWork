@@ -23,7 +23,7 @@ class AddWalk extends React.Component {
     }
 
     handleSubmit() {
-        axios.put(process.env.REACT_APP_API_URL+"/Wandeling/voegToe/"+this.state.walk);
+        axios.put("http://127.0.0.1:8080/Wandeling/voegToe/"+this.state.walk);
     }
 
     handleChange(event) {
